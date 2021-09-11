@@ -33,7 +33,7 @@
       -webkit-text-size-adjust: 100%;
   }
       
-  
+ 
   td {
       vertical-align: top;
       mso-table-lspace: 0pt !important;		
@@ -43,8 +43,22 @@
       
   a {
       text-decoration: none;
+      font-weight: 900;
   }
-      
+
+  a:link, a:visited {
+      color: inherit;
+      text-align: center;
+      text-decoration: none;
+  }
+
+  a:hover, a:active {
+      text-decoration: underline;
+  }
+  
+  .tooltip_article {
+      text-font-family:Noto Sans KR, Helvetica, Arial, sans-serif;
+  }
   
   img {
       -ms-interpolation-mode:bicubic;
@@ -343,7 +357,7 @@
                           <table cellspacing="0" cellpadding="0" border="0" width="100%">
                            <tr>
                             <td style=" text-align:left;">
-                             <div style="line-height:120%"><span style="color: #67cbad;line-height:120%;font-family:Noto Sans KR, Helvetica, Arial, sans-serif; font-size:22px;text-align:left;font-weight: 700;">어려운 경제 및 통계 용어를 <br>쉽게 설명하는 세로위키가 함께 합니다.</span></div>
+                             <div style="line-height:120%"><span style="color: #67cbad;line-height:120%;font-family:Noto Sans KR, Helvetica, Arial, sans-serif; font-size:22px;text-align:left;font-weight: 700;"><a href="https://page.stibee.com/subscriptions/139061" id="link_tapering">테이퍼링</a>, <a href="https://page.stibee.com/subscriptions/139061" id="link_nairu">자연실업률</a>, 그리고 <a href="https://page.stibee.com/subscriptions/139061" id="link_ricardian_equivalence">리카도 대등정리</a>까지. <br>어려운 주제 및 용어도 주요 쟁점과 해설, <br>그리고 관련 최신 뉴스를 통해 한번에 이해할 수 있습니다.</span></div>
                             </td>
                            </tr>
                           </table>
@@ -681,6 +695,61 @@
    </tr>
   </table>
  </div>
+
+<!-- 툴팁 컨텐츠 -->
+<div id="테이퍼링" style="display: none;">
+<p class="tooltip_article">
+<h3>테이퍼링</h3>
+        테이퍼링(tapering)이란 양적완화의 규모를 축소시키기 위해 중앙은행이 실시하는 금융정책이다. 금융시장에서는 때로 테이퍼링을 긴축 정책의 시작으로 받아들여 화폐가치와 증시가 급락하기도 하는데, 이를 긴축발작 (tapering tantrum)이라고 한다.
+</p>
+</div>
+<div id="자연실업률" class="tooltip_article" style="display: none;">
+<p class="tooltip_article">
+<h3>자연실업률</h3>
+        자연실업률, 또는 물가안정실업률(NAIRU)이란 인플레이션과 실업률 간의 음의 상관관계를 나타낸 필립스곡선에서 도출되는, 인플레이션에 추가 압력을 가하지 않는 적정 수준의 실업률을 뜻한다.
+</p>
+</div>
+<div id="리카도대등정리" class="tooltip_article" style="display: none;">
+<p class="tooltip_article">
+<h3>리카도 대등정리</h3>
+        리카도 대등정리 (Ricardian equivalence)란 정부 지출 또는 부채를 통한 재정정책은 민간 소비 활동에는 아무런 영향을 끼치지 않는다는 추측이다. 데이비드 리카도가 18세기에 주창한 이후 경제학자 로버트 배로가 20세기에 들어 신고전파 경제학에 기반해 세운 이론으로, 두 사람의 이름을 모두 따 배로-리카도 대등정리 (Barro-Ricardo equivalence theorem)라고 부르기도 한다.
+</p>
+</div>
+<!-- 툴팁 스크립트 -->
+<link
+  rel="stylesheet"
+  href="tooltip_article.css"
+/>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/border.css"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/svg-arrow.css"></script>
+    <script>
+      // With the above scripts loaded, you can call `tippy()` with a CSS
+      // selector and a `content` prop:
+      tippy('#link_tapering', {
+        arrow: false,
+        placement: 'bottom-start',
+        theme: 'tooltip_article',
+        content: 테이퍼링.innerHTML,
+        allowHTML: true,
+      });
+      tippy('#link_nairu', {
+        arrow: false,
+        placement: 'bottom-start',
+        theme: 'tooltip_article',
+        content: 자연실업률.innerHTML,
+        allowHTML: true,
+      });
+      tippy('#link_ricardian_equivalence', {
+        arrow: false,
+        placement: 'bottom-start',
+        theme: 'tooltip_article',
+        content: 리카도대등정리.innerHTML,
+        allowHTML: true,
+      });
+    </script>
+
 </body>
 
 </html>
